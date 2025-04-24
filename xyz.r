@@ -1,6 +1,0 @@
-x<-c(2,6,8,8,12,16,20,20,22,26)
-y<-c(58,105,88,118,117,137,157,169,149,202)
-plot(x,y)
-plot(x,y, xlab="Student Population", ylab="Sales", main=” Simple Regression”)
-lm(y~x)  
-summary(lm(y~x))
