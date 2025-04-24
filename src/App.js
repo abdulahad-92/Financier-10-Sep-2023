@@ -15,12 +15,38 @@ function App() {
   const [loader, setLoader] = useState(true);
   const [show, setShow] = useState(false);
   const [EditFileData, EditingFileData] = useState([]);
-  const [fileData, setFileData] = useState(
-    JSON.parse(localStorage.getItem("Files"))
-  );
-  const [fileCount, setFileCount] = useState(
-    Number.parseInt(localStorage.getItem("FileCount")) + 1
-  );
+  // const [fileData, setFileData] = useState([
+  //   JSON.parse(localStorage.getItem("Files")),
+  // ]);
+  // const [fileCount, setFileCount] = useState(
+  //   Number.parseInt(localStorage.getItem("FileCount")) + 1
+  // );
+  // ---
+  const [fileData, setFileData] = useState(() => {
+    try {
+      const storedFiles = localStorage.getItem("Files");
+      if (storedFiles === null) {
+        return []; // Return empty array if no data
+      }
+      const parsedFiles = JSON.parse(storedFiles);
+      return Array.isArray(parsedFiles) ? parsedFiles : []; // Ensure array
+    } catch (error) {
+      console.error("Error parsing Files from localStorage:", error);
+      return []; // Fallback to empty array on error
+    }
+  });
+
+  const [fileCount, setFileCount] = useState(() => {
+    try {
+      const storedCount = localStorage.getItem("FileCount");
+      const parsedCount = Number.parseInt(storedCount, 10);
+      return isNaN(parsedCount) ? 1 : parsedCount + 1; // Default to 1 if NaN
+    } catch (error) {
+      console.error("Error parsing FileCount from localStorage:", error);
+      return 1; // Fallback to 1 on error
+    }
+  });
+  // ---
   let showing = () => {
     setShow(show ? false : true);
   };
@@ -51,6 +77,7 @@ function App() {
       try {
         localStorage.setItem("Files", JSON.stringify(fileData));
         localStorage.setItem("FileCount", String(fileCount));
+        console.log("FILEDATA", fileData);
       } catch (error) {
         console.error("Error saving to localStorage:", error);
       }
@@ -74,20 +101,20 @@ function App() {
     const target =
       e.target.parentElement.parentElement.parentElement.parentElement
         .parentElement;
-    console.log(target);
-    console.log(fileData);
+    // console.log(target);
+    // console.log(fileData);
     const Id = target.classList[1];
     setFileData((FileData) => {
       let newData = FileData.filter((i) => {
         if (i.fileCount === Id) {
-          console.log(i);
+          // console.log(i);
           EditingFileData(i);
         }
         if (i.fileCount !== Id) {
           return i;
         }
       });
-      console.log(newData);
+      // console.log(newData);
       localStorage.setItem("Files", JSON.stringify(newData));
       return newData;
     });

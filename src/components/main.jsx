@@ -53,17 +53,14 @@ export default function Main(props) {
   let transData;
 
   useEffect(() => {
-    console.log("editFileData", props.editFileData);
+    console.log("transData", transactionData);
 
     // Process the first valid data object in editFileData
     const data =
       Array.isArray(props.editFileData) && props.editFileData.length > 0
         ? props.editFileData[0]
         : null;
-    console.log("data1", data);
     if (data) {
-      console.log("data2", data);
-
       // Update state with safe parsing
       const newBalance = data.balance
         ? parseInt(data.balance, 10) || balance
@@ -82,6 +79,7 @@ export default function Main(props) {
       setTransactionData(newTransData);
 
       // Update transArr if distinct (assuming same as transactionData for now)
+      console.log("transArr", newTransData);
       setTransArr(newTransData);
 
       // Handle transactions and ID
@@ -140,6 +138,7 @@ export default function Main(props) {
       ];
       setCash(0);
       setDescription("");
+      console.log("newData", newData);
       return newData;
     });
     setTimeout(() => {
@@ -162,7 +161,8 @@ export default function Main(props) {
       localStorage.setItem("IdNum", IdNum);
 
       setTransArr((transArr) => {
-        const newData = [...transArr, transData];
+        const newData = [...transArr];
+        // const newData = [...transArr,TransData]; // This line is commented out to avoid adding the same transaction again
         localStorage.setItem("Trans", JSON.stringify(newData));
         return newData;
       });
@@ -203,7 +203,8 @@ export default function Main(props) {
       transData = ["moneyDecrement", descDetails, cashDetails, transId];
 
       setTransArr((transArr) => {
-        const newData = [...transArr, transData];
+        const newData = [...transArr];
+        // const newData = [...transArr, transData]; // This line is commented out to avoid adding the same transaction again
         localStorage.setItem("Trans", JSON.stringify(newData));
         return newData;
       });
