@@ -1,0 +1,72 @@
+body article#Info{
+    overflow-y: auto;
+}
+.Info_header{
+    color: #fff;
+    text-align: center;
+    font-size: 4rem;
+}
+
+.Info_container{
+    width: 70vw;
+    height: fit-content;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.Info_container h1 {
+    color: #ffffff;
+    font-size: 3rem;
+}
+
+.Info_container h2 {
+    color: royalblue;
+    margin-top: 20px;
+    font-size: 2rem;
+}
+
+.Info_container p {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.Info_container ul {
+    margin-left: 20px;
+}
+strong{
+    font-size: 1.7rem;
+}
+li {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+.Info_container .myText{
+    color: black;
+    text-align: center;
+    text-transform: capitalize;
+}
+.Info_container footer {
+    color: #000;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+    .Info_container {
+        padding: 10px;
+        width: 100vw;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}
+
+

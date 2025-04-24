@@ -1,0 +1,493 @@
+@media screen and (max-width: 768px) { 
+    html{
+        font-size: 10px;
+    }
+    /* Nav */
+    nav{
+      padding-inline: 3%;
+    }
+    nav #logo{
+        flex-basis: 30%;
+        font-size: 2.5rem;
+    }
+      nav ul{
+        flex-basis: 70%;
+        display: flex;
+      }
+      nav ul li a span.text{
+        font-size: 1.5rem;
+      }
+      nav ul li a span img{
+        width: 20%;
+      }
+    /* Main */
+    main {
+    width: 100%;
+    height: calc(90% - 10px);
+    margin: 5px auto;
+    }
+    #moneyIncrement {
+        margin-top: 7px;
+        margin-bottom: 7px;
+        height: 5.5vh;
+      }
+      #moneyDecrement {
+        margin-top: 7px;
+        margin-bottom: 7px;
+        height: 5.5vh;
+      }
+    .edit img, .trash img{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 90%;
+    }
+    #balance_sheet{
+      height: 60%;
+    }
+    #transaction_box{
+      height: 100%;
+    }
+    #user_input{
+      height: 25%;
+    }
+    #user_input button {
+        height: 110%;
+        font-size: 2.1rem;
+        padding: 1px 2px;
+        font-size: 3rem;
+        padding-inline: 10px;
+        align-items: center;
+    }
+    #user_input input {
+        height: 5.7vh;
+        font-size: 1.3rem;
+        padding: 4px 10px;
+      }
+      #user_input label {
+        font-size: 1.5rem;
+      }
+      #user_input h2 {
+        font-size: 1.7rem;
+      }
+      #money_out {
+        display: flex;
+        justify-content: space-between;
+      }
+      #money_in {
+        display: flex;
+        justify-content: space-between;
+      }
+}
+@media screen and (max-width: 768px) and (min-width: 180px) {
+    #user_input{
+      border-radius: 0;
+      height: 30%;
+    }
+    #balance_sheet{
+      height: 51vh !important;
+    }
+    body{
+      overflow-x: hidden;
+    }
+    main {
+    width: 100%;
+    margin: 0px 0;
+    border-radius: 0px;
+    height: 90vh;
+    }
+    nav #logo{
+        flex-basis: 93%;
+        font-size: 2.5rem;
+    }
+    #menu{
+        flex-basis: 7%;
+    }
+    nav{
+      height: 8vh;
+    }
+    nav ul.open{
+      width: 15%;
+    }
+    nav ul{
+        position: absolute;
+        background: #fff;
+        width: 0%;
+        right: 0%;
+        top: 7.7%;
+        height: 92.2%;
+        box-shadow: 0 0 10px #000;
+        flex-direction: column;
+        justify-content: start;
+        gap: 1%;
+        overflow: hidden;
+        transition: width .5s;
+        transition: .5s;
+        z-index: 100;
+    }
+    nav{
+        padding-inline: 2%;
+    }
+    nav ul li a span.text{
+        font-size: 1.8rem;
+        color: transparent;
+    }
+    nav ul li a{
+        display: flex;
+        border-bottom: 1px solid #5d5d5d;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        gap: 0%;
+        height: 100%;
+      }
+      nav ul li a span img{
+        width: 50px;
+        margin-right: 5%;
+        display: flex;
+    }
+    nav ul.open:hover{
+        width: 30%;
+    }
+    nav ul:hover li a span.text{
+        color: black;
+    }
+    nav ul:hover li a span img{
+      margin-right: 0;
+    }
+    #history{
+    height: 92vh;
+    overflow-y: hidden;
+    }
+    #history .title{
+      flex-direction: row;
+    }
+    #history .title .search{
+      width: 40%;
+      height: 70%;
+      margin-top: .5%;
+  }
+    #files_container{
+      width: 98%;  
+    }
+    #file_name{
+      width: 50vw;
+      height: 28vh;
+      top: calc(50% - 12.5vh);
+      left: calc(50% - 25vw);
+    }
+    #file_name input{
+      font-size: 2rem;
+    }
+    #file_name p, #file_name p.warning{
+      font-size: 2rem;
+    }
+    #segment .btn #save_btn{
+      width: 20%;
+    } 
+    #segment .btn #reset_btn{
+      width: 20%;
+    } 
+    nav #logo img{
+      width: 20%;
+      height : 100%;
+      object-fit: contain;
+    }
+    #segment .btn #save_btn{
+  width: 8%;
+} 
+#segment .btn #reset_btn{
+  width: 8%;
+} 
+}
+@media screen and (max-width: 850px){
+  #segment .btn #save_btn{
+    width: 15%;
+  } 
+  #segment .btn #reset_btn{
+    width: 15%;
+  }
+} 
+@media screen and (max-width: 790px){
+  #segment .btn #save_btn{
+    width: 7%;
+  } 
+  #segment .btn #reset_btn{
+    width: 7%;
+  }
+} 
+@media screen and (max-width: 630px){
+  #files_container{
+    grid-template-columns: 1fr 1fr;
+  }
+  .files{
+    width: 45vw;
+    height: 50vh;
+    border-radius: 10px;
+}
+#segment .btn #save_btn{
+  width: 9%;
+} 
+#segment .btn #reset_btn{
+  width: 9%;
+} 
+}
+@media screen and (max-width: 460px){
+  html{
+    font-size: 10px;
+  }
+  nav ul li a span img{
+    width: 40px;
+    height: 40px;
+    padding-inline: 1%;
+  }
+  #menu{
+    flex-basis: 10%;
+  }
+  nav #logo{
+    flex-basis: 90%;
+  }
+  main {
+    width: 100%;
+    height: 90vh;
+  }
+  nav ul{
+    width: 0%;
+    top: 7.7%;
+    height: 92.2%;
+  }
+  nav ul.open:hover{
+    width: 50%
+  }
+  #user_input{
+    height: 30%;
+    padding: 10px 5px;
+  }
+  #user_input input {
+    height: 5vh;
+    font-size: 1.3rem;
+    padding: 4px 7px;
+  }
+  #user_input label {
+    font-size: 1.8rem;
+  }
+  #user_input h2 {
+    font-size: 2rem;
+  }
+  #moneyIncrement {
+    font-size: 4rem;
+    height: 5vh;
+  }
+  #moneyDecrement {
+    height: 5vh;
+  }
+  .edit img, .trash img{
+    height: 80%;
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+  }
+  .edit_box{
+    width: 15%;
+}
+.trash_box{
+    width: 15%;
+  }
+  #transactions_box{
+    padding: 2px 3px;
+  }
+  #balance_sheet {
+    padding: 2px 1px;
+  }
+  #transaction_details{
+    margin: 0 1px 1px;
+  }
+  #transaction_details{
+    gap: 20%;
+  }
+  #transaction_details h1{
+    word-break: break-all;
+    overflow: hidden;
+  }
+  #transactions_box::-webkit-scrollbar {
+    width: 5px;
+  }
+  #history .title{
+    flex-direction: column;
+    margin-bottom: 5%;
+  }
+  #history .title .search{
+    width: 90%;
+    height: 50%;
+    margin-top: .5%;
+}
+  #files_container{
+    width: 98%;
+    height: 75%;
+    padding: 0 12% 2% 2%;
+    gap: 7%;
+    grid-template-columns: 1fr;
+  }
+  #files_container::-webkit-scrollbar {
+    width: 4px;
+  }
+  .files{
+    width: 93vw;
+    border-radius: 0px;
+  }
+  .transactions .transaction .details{
+    font-size: 2.4rem;
+  }
+  .erEx{
+    font-size: 2.4rem;
+  }
+
+  #file_name{
+    width: 60vw;
+    height: 26vh;
+    top: calc(50% - 13vh);
+    left: calc(50% - 30vw);
+  }
+  #file_name input{
+    font-size: 1.4rem;
+    height: 6vh;
+  }
+  #file_name p, #file_name p.warning{
+    font-size: 1.6rem;
+  }
+    #balance_sheet{
+      height: 51vh !important;
+    }
+    nav{
+      height: 8vh;
+    }
+    nav #logo img{
+      width: 40%;
+      height : 100%;
+      object-fit: contain;
+    }
+    #segment .btn #save_btn{
+      width: 14%;
+    } 
+    #segment .btn #reset_btn{
+      width: 14%;
+    } 
+} 
+@media screen and (max-width: 380px){
+  #segment .btn #save_btn{
+    width: 20%;
+  } 
+  #segment .btn #reset_btn{
+    width: 20%;
+  }
+}
+@media screen and (max-width: 320px){
+  html{
+    font-size: 7.5px;
+  }
+  ::-webkit-scrollbar{
+    width: 5px;
+  }
+  nav ul li a span img{
+    width: 40px;
+    height: 40px;
+    padding-inline: 5%;
+  }
+  #menu{
+    flex-basis: 15%;
+  }
+  nav #logo{
+    flex-basis: 85%;
+  }
+  #user_input{
+    height: 30%;
+    padding: 7px 2px;
+  }
+  nav ul li a span.text{
+    font-size: 2.2rem;
+  }
+  nav ul.open:hover{
+    width: 60%;
+  }
+  .files{
+    height: 65vh;
+  }
+  #file_name{
+    width: 70vw;
+    height: 20vh;
+    top: calc(50% - 12vh);
+    left: calc(50% - 35vw);
+  }
+  #file_name input{
+    font-size: 1.5rem;
+    width: 90%;
+  }
+  #file_name p, #file_name p.warning{
+    font-size: 1.8rem;
+  }
+  main {
+    width: 100%;
+    margin: 0 auto;
+  }
+  #balance_sheet{
+    height: 51vh !important;
+  }
+  #history .title .search{
+    width: 90%;
+  }
+  #history{
+    height: 92vh;
+  }
+  nav ul{
+    width: 0%;
+    top: 7.7%;
+    height: 92.2%;
+  }
+    nav #logo img{
+      width: 50%;
+      height : 100%;
+      object-fit: contain;
+    }
+    #segment .btn #save_btn{
+      width: 25%;
+    } 
+    #segment .btn #reset_btn{
+      width: 25%;
+    }
+}
+@media screen and (max-width: 250px){
+  main {
+    width: 100%;
+    margin: 0 auto;
+    height: 95vh; 
+  }
+  nav ul{
+    width: 0%;
+    top: 7.7%;
+    height: 92.2%;
+  }
+  nav ul li a span img{
+    width: 35px;
+    height: 35px;
+    padding-inline: 10%;
+  }
+  #file_name{
+    width: 80vw;
+    height: 18vh;
+    top: calc(50% - 10vh);
+    left: calc(50% - 40vw);
+  }
+  nav #logo img{
+    width: 60%;
+    height : 100%;
+    object-fit: contain;
+  }
+  #segment .btn #save_btn{
+    width: 33%;
+  } 
+  #segment .btn #reset_btn{
+    width: 33%;
+  }
+}
