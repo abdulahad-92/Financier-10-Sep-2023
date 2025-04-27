@@ -56,7 +56,7 @@ export default function History(props) {
           <img src={SearchIcon} />
         </div>
       </div>
-      {searchingData.length > 0 && (
+      {Array.isArray(searchingData) && searchingData.length > 0 && (
         <div className="restore_files">
           <button onClick={() => dltAll()}>Delete All Files</button>
         </div>
@@ -64,7 +64,8 @@ export default function History(props) {
       {searchingData === null && <h1 className="alert">No files here!</h1>}
 
       <div id="files_container">
-        {searchingData.length > 0 &&
+        {Array.isArray(searchingData) &&
+          searchingData.length > 0 &&
           searchingData.map((fileData) => {
             return (
               <div className={"files" + " " + fileData.fileCount}>

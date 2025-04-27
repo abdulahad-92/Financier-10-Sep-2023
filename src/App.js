@@ -10,11 +10,14 @@ import History from "./components/history";
 import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Info from "./components/Info";
+import { generateAndSavePdf } from "./utils/generatePdf";
 
 function App() {
   const [loader, setLoader] = useState(true);
   const [show, setShow] = useState(false);
   const [EditFileData, EditingFileData] = useState([]);
+  const [pdfStatus, setPdfStatus] = useState({});
+
   // const [fileData, setFileData] = useState([
   //   JSON.parse(localStorage.getItem("Files")),
   // ]);
@@ -136,6 +139,43 @@ function App() {
     // });
   };
 
+  let saveFile = (e) => {
+    const target =
+      e.target.parentElement.parentElement.parentElement.parentElement
+        .parentElement;
+    // console.log(target);
+    // console.log(fileData);
+    const Id = target.classList[1];
+    setFileData((FileData) => {
+      let newData = FileData.filter((i) => {
+        if (i.fileCount === Id) {
+          // console.log(i);
+          handleDownloadPdf(i);
+        }
+        // if (i.fileCount !== Id) {
+        //   return i;
+        // } // WE ARE SAVING THE FILE NOT DELETING OR EDITING IT
+        return i;
+      });
+      // // console.log(newData);
+      localStorage.setItem("Files", JSON.stringify(newData));
+      return newData; // WE ARE SAVING THE FILE NOT DELETING OR EDITING IT SO WE DONT NEED TO RETURN NEW DATA
+    });
+  };
+  const handleDownloadPdf = async (file) => {
+    setPdfStatus((prev) => ({
+      ...prev,
+      [file.fileCount]: { loading: true, error: null },
+    }));
+    const result = await generateAndSavePdf(file);
+    setPdfStatus((prev) => ({
+      ...prev,
+      [file.fileCount]: {
+        loading: false,
+        error: result.success ? null : result.error,
+      },
+    }));
+  };
   useEffect(() => {
     setTimeout(() => {
       setLoader(false);
@@ -172,6 +212,7 @@ function App() {
                 dltFile={dltFile}
                 fileCount={fileCount}
                 editFile={editFile}
+                saveFile={saveFile} // 3 : 27 AM -
               />
             }
           ></Route>
