@@ -18,13 +18,6 @@ function App() {
   const [EditFileData, EditingFileData] = useState([]);
   const [pdfStatus, setPdfStatus] = useState({});
 
-  // const [fileData, setFileData] = useState([
-  //   JSON.parse(localStorage.getItem("Files")),
-  // ]);
-  // const [fileCount, setFileCount] = useState(
-  //   Number.parseInt(localStorage.getItem("FileCount")) + 1
-  // );
-  // ---
   const [fileData, setFileData] = useState(() => {
     try {
       const storedFiles = localStorage.getItem("Files");
