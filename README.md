@@ -7,7 +7,8 @@ A comprehensive financial tool featuring:
 💸 Expense and earnings recording with categories
 📊 Dynamic balance sheet generation with CRUD operations
 💾 Local storage for saving multiple balance sheets by name
-📄 PDF export and download option for final balance sheets
+📄 PDF export and download option for final balance sheets.
+
 *Key Features*
 ---------------- 
 * Add, edit, delete transactions with instant balance updates
