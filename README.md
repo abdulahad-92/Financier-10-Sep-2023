@@ -1,4 +1,4 @@
-*Financely: Personal Finance Tracker*
+*Financier: Personal Finance Tracker*
 ======================================
 A React JS app for effortless expense tracking and balance sheet management (SEP - 2023)
 *Overview*
